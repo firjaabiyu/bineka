@@ -3,7 +3,7 @@ import { MainLanding } from "../features/landing/main-landing";
 
 export const router = createBrowserRouter([
   {
-    path: "/2",
+    path: "/",
     element: <MainLanding />,
   },
 
