@@ -9,9 +9,6 @@
 - [Cara Menjalankan Project](#cara-menjalankan-project)
 - [Struktur Project](#struktur-project)
 - [Cara Menambahkan Halaman Baru](#cara-menambahkan-halaman-baru)
-- [Cara Menggunakan Icon](#cara-menggunakan-icon)
-- [Styling dengan Tailwind](#styling-dengan-tailwind)
-- [Tips & Tricks](#tips--tricks)
 
 ---
 
@@ -144,22 +141,6 @@ import { Icon } from '@iconify/react'
 **Done!** Akses di url `/profile`
 
 ---
-
-### Port sudah digunakan
-```bash
-# Kill process di port 5173
-npx kill-port 5173
-
-# Atau jalankan di port lain
-npm run dev -- --port 3000
-```
-
-### Module not found
-```bash
-# Clear node_modules dan reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
 
 ### Tailwind classes tidak work
 1. Pastikan file ada di `tailwind.config.js` content
