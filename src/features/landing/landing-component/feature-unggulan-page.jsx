@@ -64,12 +64,6 @@ export function FeatureUnggulanPage() {
             </div>
 
             </div>
-
-
-
-
-
-
         </div>
     )
 }
