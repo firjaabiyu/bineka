@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLanding } from "../features/landing/main-landing";
+import { ChatbotMainPage } from "../features/chatbot/chatbot-main";
 
 export const router = createBrowserRouter([
   {
@@ -9,7 +10,10 @@ export const router = createBrowserRouter([
 
   // tambahkan route dan panggil elemtn disini
 
-
+  {
+    path: "/bineka-ai",
+    element: <ChatbotMainPage />,
+  },
 
 
 
