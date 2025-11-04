@@ -48,9 +48,10 @@ export default function HeaderSection() {
           className="text-3xl md:text-6xl font-bold leading-snug"
         >
           <div>
-            <span className="text-[#b5ff48] font-jakarta">#</span>Dari{" "}
-            <span className="text-[#A4D214] font-jakarta">Sabang</span>
-          </div>
+  <span className="text-[#b5ff48] font-jakarta"># </span>
+  <span className="font-jakarta">Dari </span>
+  <span className="text-[#A4D214] font-jakarta">Sabang</span>
+</div>
           <div className="font-jakarta">
             Sampai{" "}
             <span className="text-[#FBC02D] font-jakarta">Merauke</span>

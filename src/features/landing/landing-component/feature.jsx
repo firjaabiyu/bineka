@@ -34,7 +34,7 @@ export default function FeatureSection() {
             key={index}
             className={`rounded-3xl p-6 ${item.bg}  transition w-[300px] h-[300px] flex flex-col justify-start`}
           >
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               <img
                 src={item.icon}
                 alt={item.title}

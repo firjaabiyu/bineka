@@ -22,7 +22,7 @@ export function FeatureUnggulanPage() {
             </div>
 
             <div className="relative w-3/5 flex items-center rounded-full p-1.5 bg-[#ECEAEA] overflow-hidden">
-                {/* animasi background merah */}
+              
                 <motion.div
                     layout
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}

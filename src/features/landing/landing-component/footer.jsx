@@ -7,13 +7,12 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/60">
         {/* Kolom 1 */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Bineka</h2>
-          <p className="text-white/90 leading-relaxed mb-6">
+          <h1 className="text-3xl font-bold mb-4 font-jakarta">Bineka</h1>
+          <p className="text-white/90 leading-relaxed mb-6 font-jakarta">
             Deskripsi singkat Deskripsi singkat Deskripsi singkat Deskripsi
             singkat Deskripsi singkat
           </p>
 
-          {/* Ikon Sosial */}
           <div className="flex gap-5">
             <SocialIcon src="src/assets/icons/facebook.svg" alt="Facebook" />
             <SocialIcon src="src/assets/icons/instagram.svg" alt="Instagram" />
@@ -22,20 +21,20 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Kolom 2 */}
+       
         <div>
-          <h3 className="text-lg font-semibold mb-4">Navigasi Utama</h3>
-          <ul className="space-y-2 text-white/90">
+          <h1 className="text-3xl font-semibold mb-4 font-jakarta">Navigasi Utama</h1>
+          <ul className="space-y-2 text-white/90 font-jakarta">
             <li>Game</li>
             <li>Chatbot</li>
             <li>Peta</li>
           </ul>
         </div>
 
-        {/* Kolom 3 */}
+        
         <div>
-          <h3 className="text-lg font-semibold mb-4">Fitur Unggulan</h3>
-          <ul className="space-y-2 text-white/90">
+          <h3 className="text-3xl font-semibold mb-4 font-jakarta">Fitur Unggulan</h3>
+          <ul className="space-y-2 text-white/90 font-jakarta">
             <li>Tentang Kami</li>
             <li>Menu</li>
             <li>Testimoni</li>
@@ -45,10 +44,10 @@ const Footer = () => {
       </div>
 
       {/* Bagian bawah */}
-      <div className="text-center mt-8 text-white/90 text-sm space-y-2">
+      <div className="text-center mt-8 text-white/90 text-sm space-y-2 font-jakarta">
         <p>© 2025 - Super nnova</p>
         <p>
-          Dibangun dengan <span className="text-red-400">❤️</span> untuk
+          Dibangun dengan <span className="text-red-400 font-jakarta">❤️</span> untuk
           pelestarian budaya Indonesia
         </p>
       </div>

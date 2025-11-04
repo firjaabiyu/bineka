@@ -3,7 +3,7 @@ import React from "react";
 const AboutUs = () => {
   return (
     <section className="font-[Plus Jakarta Sans] w-full flex flex-col md:flex-row items-center justify-between md:pl-0 md:pr-16 py-10 gap-10 overflow-hidden">
-      {/* Gambar di kiri */}
+  
       <div className="relative w-full md:w-1/2 flex justify-center md:justify-start">
         <img
           src="src/assets/img-aboutus.png" 
