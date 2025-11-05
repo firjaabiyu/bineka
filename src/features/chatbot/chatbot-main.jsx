@@ -6,15 +6,88 @@ import senjataBg from "../../assets/senjata-traditional.png"
 import makanananIcon from "../../assets/makanan.svg"
 import languageIcon from "../../assets/language.svg"
 import makananBg from "../../assets/makanan-traditional.png"
-import { useState } from "react"
+import { use, useState } from "react"
+import { requestGemini } from "./gemini-ai"
 
 export function ChatbotMainPage() {
     const [isOpen, setIsOpen] = useState(false);
     const [language, setLanguage] = useState("indonesia");
+    const [result, setResult] = useState("");
+    const [openChat, setOpenChat] = useState(false);
+    const [form, setForm] = useState({
+        description: "",
+        bahasa: "indonesia",
+    })
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [err, setErr] = useState(false);
+    const [typedResult, setTypedResult] = useState("");
+
+    const typeText = (text) => {
+        setTypedResult(""); // Reset sebelum mulai
+        let index = 0;
+      
+        const interval = setInterval(() => {
+          setTypedResult((prev) => prev + text[index]);
+          index++;
+      
+          if (index >= text.length) {
+            clearInterval(interval);
+          }
+        }, 20); // kecepatan ketikan (ms per huruf)
+      };
+      
+
+    const handleAI = async () => {
+
+        try {
+          if (form.description.length < 6) {
+            setError("Mohon Deskripsikan Toko Anda Seperti Apa");
+            setErr(true);
+            setTimeout(() => {
+                setErr(false);
+            }, 3000);
+          }
+          else if (form.description.length > 50) {
+            setError("description tidak boleh lebih dari 50 karakter");
+            setErr(true);
+            setTimeout(() => {
+                setErr(false);
+            }, 3000);
+          } else {
+            setLoading(true);
+            // document.getElementById("description").value = "BINEKA Sedang Mencari...";
+            const prompt = `Jelaskan saya ${form.description}  dan jelaskan sangat lancar dengan bahasa ${language} sampai sampai anak kecil pun mengerti apa yang anda jelaskan maksimal 60 kata`; // GANTI DENGAN PROMPT KAMU
+            const result = await requestGemini(prompt);
+            const cleanResult = result.replace(/\n/g, "<br>");
+            setResult(cleanResult);
+            setOpenChat(true);
+            typeText(result);
+          }
+    
+        } catch (error) {
+          alert(error.message);
+        } finally {
+          setLoading(false);
+    
+        }
+      };
+      const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+
+        console.log(e.target.name);
+      };
+
+      // on enter functuin handleai jalan
+      const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+          handleAI();
+        }
+      };
     return (
         <div className="flex h-screen w-screen bg-linear-to-t from-[rgb(247,228,225)]  to-[#FFFFFF] items-center justify-center">
             <img src={indonesiaIsland} alt="" className="w-4/5 absolute h-4/5 " />
-            <div className="flex w-1/2 items-center justify-center flex-col z-10 gap-8">
+            <div className="flex w-1/2 items-center justify-center flex-col z-10 gap-8 px-3">
                 <div className="flex gap-2 flex-col justify-center items-center">
                     <div className="w-24 h-24 rounded-full bg-red-200"></div>
                     <div className="flex flex-col items-center">
@@ -23,9 +96,29 @@ export function ChatbotMainPage() {
                     </div>
 
                 </div>
+                {openChat && (
+                    <div className="flex flex-col gap-2 w-full h-[50vh] overflow-y-auto px-3">
+                        <div className="w-full flex items-end justify-end">
+                            <div className="flex flex-col gap-3 items-end w-1/2">
+                    <div className="w-10 h-10 rounded-full bg-red-200"></div>
+                    <div className="rounded-md border bg-red-100 text-xs p-2 border-[#9A1C1E]">{form.description}</div>
+
+                            </div>
+                            
+                        </div>
+                        <div className="w-full flex ">
+                            <div className="flex flex-col gap-3 w-1/2">
+                    <div className="w-10 h-10 rounded-full bg-red-200"></div>
+                    <div id="aiResult" className="rounded-md border bg-red-100 text-xs p-2 border-[#9A1C1E]"  dangerouslySetInnerHTML={{ __html: typedResult }}></div>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                )}
                 <div className="flex w-full flex-col gap-3 items-center">
                     <div className="w-full flex text-xs items-center gap-1 rounded-full relative bg-white focus:outline-none border-[#9A1C1E] border py-3 px-4">
-                        <textarea className="w-full focus:outline-none py-1 px-2"></textarea>
+                        <textarea name="description" id="description" onChange={handleChange} className="w-full focus:outline-none py-1 px-2" onKeyDown={handleKeyDown}></textarea>
                         {isOpen && (
                             <div className="flex p-2 bg-white rounded-md flex-col gap-1 absolute -right-24 -top-16">
                                 <p onClick={() => setLanguage("sunda")} className={`${language === "sunda" && "underline text-[#9A1C1E]"} text-xs font-medium text-[#1b1b1b] hover:italic hover:cursor-pointer hover:underline hover:text-[#9A1C1E]`}>Bahasa Sunda</p>
@@ -34,7 +127,7 @@ export function ChatbotMainPage() {
                             </div>
                         )}
 
-                        <div onClick={() => setIsOpen(!isOpen)} className="p-2 w-fit h-fit rounded-full bg-red-100"><img src={languageIcon} alt="" className="w-4 h-4" /></div>
+                        <div onClick={() => setIsOpen(!isOpen)} className={`${loading && 'animate-bounce'} p-2 w-fit h-fit rounded-full bg-red-100`}><img src={languageIcon} alt="" className="w-4 h-4" /></div>
                     </div>
                     <div className="flex w-full justify-between gap-8">
                         <div className="flex w-full rounded-md border py-3 px-4.5 border-[#9A1C1E] gap-2" style={{ backgroundImage: `url(${traditionalBg})` }}>
