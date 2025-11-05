@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLanding } from "../features/landing/main-landing";
 import { ChatbotMainPage } from "../features/chatbot/chatbot-main";
+import { MainCommunity } from "../features/community/main";
+import { MarketPlace } from "../features/community/market-place";
+import { MarketPlaceDetail } from "../features/community/market-place-detail";
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +16,21 @@ export const router = createBrowserRouter([
   {
     path: "/bineka-ai",
     element: <ChatbotMainPage />,
+  },
+
+  {
+    path: "/komunitas",
+    element: <MainCommunity />,
+  },
+
+  {
+    path: "/komunitas/market",
+    element: <MarketPlace />,
+  },
+
+  {
+    path: "/komunitas/market/:id",
+    element: <MarketPlaceDetail />,
   },
 
 

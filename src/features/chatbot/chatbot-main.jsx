@@ -118,7 +118,8 @@ export function ChatbotMainPage() {
                 )}
                 <div className="flex w-full flex-col gap-3 items-center">
                     <div className="w-full flex text-xs items-center gap-1 rounded-full relative bg-white focus:outline-none border-[#9A1C1E] border py-3 px-4">
-                        <textarea name="description" id="description" onChange={handleChange} className="w-full focus:outline-none py-1 px-2" onKeyDown={handleKeyDown}></textarea>
+                        {/* <textarea name="description" id="description" onChange={handleChange} className="w-full focus:outline-none py-1 px-2" onKeyDown={handleKeyDown}></textarea> */}
+                        <input type="text" name="description" id="description" onChange={handleChange} className="w-full focus:outline-none py-1 px-2" onKeyDown={handleKeyDown} />
                         {isOpen && (
                             <div className="flex p-2 bg-white rounded-md flex-col gap-1 absolute -right-24 -top-16">
                                 <p onClick={() => setLanguage("sunda")} className={`${language === "sunda" && "underline text-[#9A1C1E]"} text-xs font-medium text-[#1b1b1b] hover:italic hover:cursor-pointer hover:underline hover:text-[#9A1C1E]`}>Bahasa Sunda</p>
