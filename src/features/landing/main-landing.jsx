@@ -1,5 +1,6 @@
 import AboutUs from "./landing-component/about-us";
 import { ArtikelPage } from "./landing-component/artikel-section";
+import CommunitySection from "./landing-component/community";
 import FeatureSection from "./landing-component/feature";
 import { FeatureUnggulanPage } from "./landing-component/feature-unggulan-page";
 import Footer from "./landing-component/footer";
@@ -22,6 +23,7 @@ export function MainLanding() {
 
         {/* page feature unggulan VVV */}
         <FeatureUnggulanPage/>
+        <CommunitySection/>
         <ArtikelPage/>
         
         <GaleriKarya/>

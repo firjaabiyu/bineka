@@ -14,7 +14,7 @@ export function FeatureUnggulanPage() {
     
       const [activeIndex, setActiveIndex] = useState(0);
     return (
-        <div className="w-full flex flex-col gap-10 items-center py-10">
+        <div className="w-full flex flex-col gap-10 items-center pb-15">
             <div className="flex flex-col gap-2 items-center">
                 <p className="text-black text-2xl font-medium">Fitur Unggulan</p>
                 <div className="w-16 h-[3px] bg-[#CF392C] rounded-full mt-1"></div>
