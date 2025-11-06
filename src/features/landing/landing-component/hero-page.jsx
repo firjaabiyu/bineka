@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function HeaderSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden font-['Plus_Jakarta_Sans'] bg-gradient-to-b from-black via-[#111111] to-[#1a1a1a] text-white">
-      
+
       {/* Background map */}
       <img
         src="src/assets/map-hero.svg"
@@ -48,10 +49,10 @@ export default function HeaderSection() {
           className="text-3xl md:text-6xl font-bold leading-snug"
         >
           <div>
-  <span className="text-[#b5ff48] font-jakarta"># </span>
-  <span className="font-jakarta">Dari </span>
-  <span className="text-[#A4D214] font-jakarta">Sabang</span>
-</div>
+            <span className="text-[#b5ff48] font-jakarta"># </span>
+            <span className="font-jakarta">Dari </span>
+            <span className="text-[#A4D214] font-jakarta">Sabang</span>
+          </div>
           <div className="font-jakarta">
             Sampai{" "}
             <span className="text-[#FBC02D] font-jakarta">Merauke</span>
@@ -67,14 +68,18 @@ export default function HeaderSection() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
-          <button className="flex items-center gap-2 px-6 py-3 bg-[#C6FF4D] font-jakarta text-black font-semibold rounded-full hover:bg-[#b5ff48] transition">
+          {/* Ganti tombol biasa jadi Link */}
+          <Link
+            to="/komunitas"
+            className="flex items-center gap-2 px-6 py-3 bg-[#C6FF4D] font-jakarta text-black font-semibold rounded-full hover:bg-[#b5ff48] transition"
+          >
             <img
               src="src/assets/icons/community.svg"
               alt="Join Icon"
               className="w-5 h-5"
             />
             Join Komunitas
-          </button>
+          </Link>
 
           <button className="flex items-center font-jakarta gap-2 px-6 py-3 border border-white/40 text-white font-semibold rounded-full hover:bg-white/10 transition">
             <img

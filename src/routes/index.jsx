@@ -16,8 +16,6 @@ export const router = createBrowserRouter([
     element: <GamePage />,
   },
 
-  // tambahkan route dan panggil elemtn disini
-
   {
     path: "/bineka-ai",
     element: <ChatbotMainPage />,
