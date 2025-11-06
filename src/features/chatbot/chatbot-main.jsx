@@ -18,6 +18,7 @@ export function ChatbotMainPage() {
         description: "",
         bahasa: "indonesia",
     })
+    const [currentDescription, setCurrentDescription] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [err, setErr] = useState(false);
@@ -62,6 +63,7 @@ export function ChatbotMainPage() {
             const cleanResult = result.replace(/\n/g, "<br>");
             setResult(cleanResult);
             setOpenChat(true);
+            setCurrentDescription(form.description);
             typeText(result);
           }
     
@@ -96,26 +98,26 @@ export function ChatbotMainPage() {
                     </div>
 
                 </div>
-                {openChat && (
-                    <div className="flex flex-col gap-2 w-full h-[50vh] overflow-y-auto px-3">
+                {/* {openChat && ( */}
+                    <div className={` ${openChat ? "h-[50vh]" : "h-0"} flex flex-col gap-2 w-full duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-y-auto px-3`}>
                         <div className="w-full flex items-end justify-end">
                             <div className="flex flex-col gap-3 items-end w-1/2">
                     <div className="w-10 h-10 rounded-full bg-red-200"></div>
-                    <div className="rounded-md border bg-red-100 text-xs p-2 border-[#9A1C1E]">{form.description}</div>
+                    <div className="rounded-md border bg-red-100 text-xs p-2 border-[#9A1C1E]">{currentDescription}</div>
 
                             </div>
                             
                         </div>
                         <div className="w-full flex ">
                             <div className="flex flex-col gap-3 w-1/2">
-                    <div className="w-10 h-10 rounded-full bg-red-200"></div>
+                    <div className="w-10 h-10 rounded-full bg-[#be8689]"></div>
                     <div id="aiResult" className="rounded-md border bg-red-100 text-xs p-2 border-[#9A1C1E]"  dangerouslySetInnerHTML={{ __html: typedResult }}></div>
 
                             </div>
                             
                         </div>
                     </div>
-                )}
+                {/* )} */}
                 <div className="flex w-full flex-col gap-3 items-center">
                     <div className="w-full flex text-xs items-center gap-1 rounded-full relative bg-white focus:outline-none border-[#9A1C1E] border py-3 px-4">
                         {/* <textarea name="description" id="description" onChange={handleChange} className="w-full focus:outline-none py-1 px-2" onKeyDown={handleKeyDown}></textarea> */}
