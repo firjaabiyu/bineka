@@ -1,4 +1,4 @@
- import { CirclePoundSterling, Heart, MessageSquareText } from "lucide-react";
+ import { ArrowLeft, CirclePoundSterling, Heart, MessageSquareText } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -19,8 +19,8 @@ export function MainCommunity() {
             avatar: "https://i.pravatar.cc/64?img=8",
             time: "2 minggu lalu",
             title: "Budaya Indonesia",
-            body: "ini renacanya untuk post kayak funfact, terus pengamalan orang dalam merasakan budaya di indonesia",
-            image: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop",
+            body: "Budaya indonesia itu beragam dan unik banget, salah satunya itu budaya nikah di Minang",
+            image: "https://images.unsplash.com/photo-1623210412831-e29c8c5b81cf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2670",
             likes: 20,
             comments: [
                 { user: "User1", text: "Great post about Indonesian culture!" },
@@ -34,8 +34,8 @@ export function MainCommunity() {
             avatar: "https://i.pravatar.cc/64?img=12",
             time: "5 hari lalu",
             title: "Harimau Sumatra",
-            body: "ini renacanya untuk post kayak funfact, terus pengamalan orang dalam merasakan budaya di indonesia",
-            image: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop",
+            body: "Funfact, Harimau Sumatra itu dia berkaki 4 loh guys :)",
+            image: "https://images.unsplash.com/photo-1723036123278-48b332ad8030?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=3434",
             likes: 52,
             comments: [
                 { user: "User4", text: "Amazing photo!" },
@@ -69,15 +69,25 @@ export function MainCommunity() {
         setComposerText("");
         setComposerImage(null);
         // In real app, push to backend and refresh list
-        alert("Postingan terkirim! (mock)");
+        alert("Postingan terkirim! ");
     };
 
     return (
         <div className="w-full min-h-screen bg-[#FAFAFA] pb-8">
-            <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 mt-6">
+            <div className="max-w-6xl mx-auto px-4">
+                <div className="flex items-center gap-3 pt-6 mb-6">
+                    <button 
+                        onClick={() => navigate("/")} 
+                        className="cursor-pointer flex items-center justify-center w-10 h-10 rounded-full border border-[#E2E2E2] bg-white hover:bg-[#F5F5F5] transition-colors"
+                    >
+                        <ArrowLeft className="w-5 h-5 text-[#1B1B1B]" />
+                    </button>
+                    <span className="text-[#1B1B1B] font-semibold text-lg">komunitas</span>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
                 {/* Left content */}
                 <div className="flex flex-col gap-6">
-                    {/* Welcome banner (matches provided design) */}
+                    {/* Welcome banner */}
                     <div className="rounded-xl border border-[#CF392C] bg-[#FFF4F1] p-5">
                         <div className="text-center">
                             <p className="text-[#1B1B1B] font-semibold">Selamat Datang di Komunitas!</p>
@@ -104,7 +114,7 @@ export function MainCommunity() {
                                 <button
                                     key={opt.key}
                                     onClick={()=>setFilter(opt.key)}
-                                    className={`px-3 py-1.5 rounded-full border transition ${filter===opt.key?"bg-[#CF392C] text-white border-[#CF392C]":"bg-white border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]"}`}
+                                    className={`cursor-pointer px-3 py-1.5 rounded-full border transition ${filter===opt.key?"bg-[#CF392C] text-white border-[#CF392C]":"bg-white border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]"}`}
                                 >{opt.label}</button>
                             ))}
                         </div>
@@ -115,7 +125,7 @@ export function MainCommunity() {
                         <div className="rounded-xl border border-[#E2E2E2] bg-white p-5 text-[#9A1C1E] flex flex-col items-center">
                             <p className="text-sm">Login untuk membuka semua fitur komunitas!</p>
                             <div className="mt-3">
-                                <button onClick={()=>setIsLoggedIn(true)} className="px-4 py-2 rounded-full bg-[#CF392C] text-white text-sm">Login</button>
+                                <button onClick={()=>setIsLoggedIn(true)} className="cursor-pointer px-4 py-2 rounded-full bg-[#CF392C] text-white text-sm">Login</button>
                             </div>
                         </div>
                     ) : (
@@ -134,7 +144,7 @@ export function MainCommunity() {
                                     Upload Gambar
                                     <input type="file" accept="image/*" className="hidden" onChange={onUploadImage} />
                                 </label>
-                                <button onClick={submitPost} className="px-4 py-2 rounded-full bg-[#CF392C] text-white">Posting</button>
+                                <button onClick={submitPost} className=" cursor-pointer px-4 py-2 rounded-full bg-[#CF392C] text-white">Posting</button>
                             </div>
                         </div>
                     )}
@@ -159,8 +169,9 @@ export function MainCommunity() {
                             </div>
                             <div className="w-12 h-12 rounded-full bg-[#CF392C]"></div>
                         </div>
-                        <button onClick={()=>navigate("/komunitas/market")} className="w-full mt-5 px-4 py-2.5 rounded-lg bg-[#CF392C] text-white hover:bg-[#d83021]">Belanja Produk</button>
+                        <button onClick={()=>navigate("/komunitas/market")} className=" cursor-pointer w-full mt-5 px-4 py-2.5 rounded-lg bg-[#CF392C] text-white hover:bg-[#d83021]">Belanja Produk</button>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -196,11 +207,11 @@ function PostCard({ post }) {
                     </div>
                 </div>
                 <div className="px-5 py-3 border-t border-[#F0F0F0] flex items-center gap-8 text-[#6B7280]">
-                    <button onClick={toggleLike} className={`flex items-center gap-2 ${liked?"text-[#CF392C]":""}`}>
+                    <button onClick={toggleLike} className={`cursor-pointer flex items-center gap-2 ${liked?"text-[#CF392C]":""}`}>
                         <Heart className={`w-5 h-5 ${liked?"fill-[#CF392C]":""}`} />
                         {likes}
                     </button>
-                    <button onClick={() => setShowComments(true)} className="flex items-center gap-2">
+                    <button onClick={() => setShowComments(true)} className="cursor-pointer flex items-center gap-2">
                         <MessageSquareText className="w-5 h-5" />
                         {post.comments.length}
                     </button>
@@ -209,11 +220,11 @@ function PostCard({ post }) {
 
             {/* Comments Pop-up */}
             {showComments && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-xl p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto">
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-lg font-semibold">Komentar</h3>
-                            <button onClick={() => setShowComments(false)} className="text-gray-500 hover:text-gray-700">
+                            <button onClick={() => setShowComments(false)} className="cursor-pointer text-gray-500 hover:text-gray-700">
                                 <span className="text-2xl">&times;</span>
                             </button>
                         </div>
@@ -230,7 +241,7 @@ function PostCard({ post }) {
                         </div>
                         <div className="mt-4 flex items-center gap-2">
                             <input placeholder="Tulis komentar..." className="flex-1 px-3 py-2 rounded-lg border border-[#E2E2E2] outline-none" />
-                            <button className="px-4 py-2 rounded-lg bg-[#CF392C] text-white">Kirim</button>
+                            <button className="px-4 py-2 rounded-lg bg-[#CF392C] text-white cursor-pointer">Kirim</button>
                         </div>
                     </div>
                 </div>

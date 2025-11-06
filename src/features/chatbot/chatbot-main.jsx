@@ -6,7 +6,7 @@ import senjataBg from "../../assets/senjata-traditional.png"
 import makanananIcon from "../../assets/makanan.svg"
 import languageIcon from "../../assets/language.svg"
 import makananBg from "../../assets/makanan-traditional.png"
-import { use, useState } from "react"
+import { useEffect, useState } from "react"
 import { requestGemini } from "./gemini-ai"
 
 export function ChatbotMainPage() {
@@ -43,7 +43,7 @@ export function ChatbotMainPage() {
 
         try {
           if (form.description.length < 6) {
-            setError("Mohon Deskripsikan Toko Anda Seperti Apa");
+            setError("Minimum 6 karakter");
             setErr(true);
             setTimeout(() => {
                 setErr(false);
@@ -74,6 +74,12 @@ export function ChatbotMainPage() {
     
         }
       };
+
+      useEffect(() => {
+        if (error) {
+          alert(error)
+        }
+      }, [error])
       const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
 

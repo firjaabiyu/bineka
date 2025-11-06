@@ -1,3 +1,4 @@
+import { ArrowLeft } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,13 +9,13 @@ export function MarketPlace() {
     const [activeCategory, setActiveCategory] = useState("Kerajinan");
 
     const products = useMemo(() => ([
-        { id: 1, category: "Kerajinan", name: "Gelang Manik Bali", price: 65000, location: "Gianyar, Bali", image: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop", likes: 20, createdAt: 1741000000000 },
-        { id: 2, category: "Tenun", name: "Kain Tenun Sumba", price: 350000, location: "Sumba", image: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop", likes: 52, createdAt: 1742000000000 },
-        { id: 3, category: "Patung", name: "Topeng Malangan", price: 180000, location: "Malang", image: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop", likes: 11, createdAt: 1740000000000 },
-        { id: 4, category: "Aksesori", name: "Kalung Kerang Lombok", price: 85000, location: "Mataram", image: "https://images.unsplash.com/photo-1543093479-4d73a69530fd?q=80&w=1200&auto=format&fit=crop", likes: 31, createdAt: 1742100000000 },
-        { id: 5, category: "Lukisan", name: "Lukisan Batik Pekalongan", price: 420000, location: "Pekalongan", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200&auto=format&fit=crop", likes: 17, createdAt: 1740500000000 },
-        { id: 6, category: "Pakaian Adat", name: "Ikat Kepala Bali", price: 95000, location: "Denpasar", image: "https://images.unsplash.com/photo-1461727885569-b2ddec0c432d?q=80&w=1200&auto=format&fit=crop", likes: 27, createdAt: 1742200000000 },
-        { id: 7, category: "Kerajinan", name: "Anyaman Rotan Kalimantan", price: 250000, location: "Samarinda", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop", likes: 44, createdAt: 1742300000000 }
+        { id: 1, category: "Kerajinan", name: "Gelang Manik Bali", price: 65000, location: "Gianyar, Bali", image: "https://images.unsplash.com/photo-1559555698-cc683c339bdb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2670", likes: 20, createdAt: 1741000000000 },
+        { id: 2, category: "Tenun", name: "Kain Tenun Sumba", price: 350000, location: "Sumba", image: "https://images.unsplash.com/photo-1661144050353-1d2566cbdf03?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1287", likes: 52, createdAt: 1742000000000 },
+        { id: 3, category: "Patung", name: "Topeng Malangan", price: 180000, location: "Malang", image: "https://jadesta.kemenparekraf.go.id/imgpost/150688.jpg", likes: 11, createdAt: 1740000000000 },
+        { id: 4, category: "Aksesori", name: "Kalung Kerang Lombok", price: 85000, location: "Mataram", image: "https://images.unsplash.com/photo-1596187404741-1ee205c1c353?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1287", likes: 31, createdAt: 1742100000000 },
+        { id: 5, category: "Lukisan", name: "Lukisan Batik Pekalongan", price: 420000, location: "Pekalongan", image: "https://images.unsplash.com/photo-1693988112036-fbb124e6b082?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1335", likes: 17, createdAt: 1740500000000 },
+        { id: 6, category: "Pakaian Adat", name: "Ikat Kepala Bali", price: 95000, location: "Denpasar", image: "https://img.id.my-best.com/contents/6df95f5f0f4070bc72ae2f1ab5d08308.png?ixlib=rails-4.3.1&q=70&lossless=0&w=1200&h=900&fit=crop&s=cb08ddcb67d83269a5ad897eb520d3f2", likes: 27, createdAt: 1742200000000 },
+        { id: 7, category: "Kerajinan", name: "Anyaman Rotan Kalimantan", price: 250000, location: "Samarinda", image: "https://images.unsplash.com/photo-1668008555730-c390ae0b0247?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1335", likes: 44, createdAt: 1742300000000 }
     ]), []);
 
     const list = useMemo(() => {
@@ -29,8 +30,8 @@ export function MarketPlace() {
         <div className="w-full min-h-screen bg-[#FAFAFA] py-8">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex items-center justify-between">
+                    <button onClick={()=>navigate(-1)} className="text-sm px-3 flex gap-1 items-center cursor-pointer py-1.5 rounded-full border border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]"> <ArrowLeft className="w-4 h-4" />Kembali</button>
                     <h1 className="text-2xl font-semibold">Market Budaya</h1>
-                    <button onClick={()=>navigate(-1)} className="text-sm px-3 py-1.5 rounded-full border border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]">Kembali</button>
                 </div>
 
                 {/* Toolbar */}
@@ -45,7 +46,7 @@ export function MarketPlace() {
                             {key:"newest", label:"Terbaru"},
                             {key:"oldest", label:"Terlama"}
                         ].map(opt => (
-                            <button key={opt.key} onClick={()=>setFilter(opt.key)} className={`px-3 py-1.5 rounded-full border ${filter===opt.key?"bg-[#CF392C] text-white border-[#CF392C]":"bg-white border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]"}`}>{opt.label}</button>
+                            <button key={opt.key} onClick={()=>setFilter(opt.key)} className={`cursor-pointer px-3 py-1.5 rounded-full border ${filter===opt.key?"bg-[#CF392C] text-white border-[#CF392C]":"bg-white border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]"}`}>{opt.label}</button>
                         ))}
                     </div>
                 </div>
@@ -53,14 +54,14 @@ export function MarketPlace() {
                 {/* Grid */}
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {list.map(p => (
-                        <button key={p.id} onClick={()=>navigate(`/komunitas/market/${p.id}`)} className="text-left rounded-xl overflow-hidden bg-white border border-[#E2E2E2] hover:shadow-md transition">
+                        <button key={p.id} onClick={()=>navigate(`/komunitas/market/${p.id}`)} className="text-left cursor-pointer rounded-xl overflow-hidden bg-white border border-[#E2E2E2] hover:shadow-md transition">
                             <img src={p.image} alt={p.name} className="w-full h-44 object-cover" />
                             <div className="p-4">
                                 <h3 className="font-semibold">{p.name}</h3>
                                 <p className="text-sm text-[#6B7280] mt-1">{p.location}</p>
                                 <div className="mt-3 flex items-center justify-between">
                                     <div className="font-bold">Rp{p.price.toLocaleString("id-ID")}</div>
-                                    <div className="text-[#6B7280] text-sm flex items-center gap-1"><span className="icon-[mdi--heart-outline]"></span>{p.likes}</div>
+                                    <div className="text-[#6B7280] text-[10px] flex items-center gap-1">{p.likes} Terjual</div>
                                 </div>
                             </div>
                         </button>
@@ -76,7 +77,7 @@ export function MarketPlace() {
                                 <button
                                     key={c}
                                     onClick={()=>setActiveCategory(c)}
-                                    className={`px-3 py-1.5 rounded-full border text-sm ${activeCategory===c?"bg-[#CF392C] text-white border-[#CF392C]":"border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]"}`}
+                                    className={`cursor-pointer px-3 py-1.5 rounded-full border text-sm ${activeCategory===c?"bg-[#CF392C] text-white border-[#CF392C]":"border-[#CF392C] text-[#CF392C] hover:bg-[#fff3f2]"}`}
                                 >{c}</button>
                             ))}
                         </div>
@@ -84,7 +85,7 @@ export function MarketPlace() {
                         {/* Category products */}
                         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {products.filter(p=>p.category===activeCategory).map(p => (
-                                <button key={`cat-${p.id}`} onClick={()=>navigate(`/komunitas/market/${p.id}`)} className="text-left rounded-xl overflow-hidden bg-white border border-[#E2E2E2] hover:shadow-md transition">
+                                <button key={`cat-${p.id}`} onClick={()=>navigate(`/komunitas/market/${p.id}`)} className="cursor-pointer text-left rounded-xl overflow-hidden bg-white border border-[#E2E2E2] hover:shadow-md transition">
                                     <img src={p.image} alt={p.name} className="w-full h-36 object-cover" />
                                     <div className="p-4">
                                         <h4 className="font-semibold text-sm">{p.name}</h4>
@@ -97,7 +98,7 @@ export function MarketPlace() {
                             ))}
                         </div>
                     </div>
-                    <div className="rounded-xl border border-[#E2E2E2] bg-white p-5">
+                    <div className="rounded-xl border border-[#E2E2E2] bg-white p-5 h-fit">
                         <p className="font-semibold">Dukungan</p>
                         <p className="text-sm text-[#6B7280] mt-1">Bagikan Market Budaya ke teman-temanmu dan ikut dukung pelestarian budaya Indonesia!</p>
                         <button onClick={()=>{}} className="w-full mt-4 px-4 py-2.5 rounded-lg bg-[#CF392C] text-white">Share</button>
