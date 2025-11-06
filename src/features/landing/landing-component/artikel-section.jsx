@@ -14,8 +14,8 @@ export function ArtikelPage() {
       {/* Cards Section */}
       <div className="w-11/12 md:w-10/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Card 1 */}
-        <div className="p-6  rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-xl bg-white h-44 md:h-48"></div>
+        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
+          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
           <p className="text-white font-bold text-base md:text-lg leading-tight">
             Rehabilitasi Kuntilanak yang Sehat-Sehar
           </p>
@@ -29,8 +29,8 @@ export function ArtikelPage() {
         </div>
 
         {/* Card 2 */}
-        <div className="p-6  rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-xl bg-white h-44 md:h-48"></div>
+        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
+          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
           <p className="text-white font-bold text-base md:text-lg leading-tight">
             Legenda Danau Toba
           </p>
@@ -44,13 +44,13 @@ export function ArtikelPage() {
         </div>
 
         {/* Card 3 */}
-        <div className="p-6 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-xl bg-white h-44 md:h-48"></div>
+        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
+          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
           <p className="text-white font-bold text-base md:text-lg leading-tight">
             Asal Usul Candi Prambanan
           </p>
           <div className="flex gap-2 items-center px-3 py-1.5 w-fit rounded-md bg-[#AA2216]">
-            <img src={coin} alt="coin" className="w-4 h-4" />
+              <img src={coin} alt="coin" className="w-4 h-4" />
             <p className="text-white text-sm font-bold">+180 Poin</p>
           </div>
           <div className="w-full  mt-auto py-2.5 rounded-lg text-black font-bold flex bg-[#B0E639] items-center justify-center">
@@ -59,8 +59,8 @@ export function ArtikelPage() {
         </div>
 
         {/* Card 4 */}
-        <div className="p-6 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-xl bg-white h-44 md:h-48"></div>
+        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
+          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
           <p className="text-white font-bold text-base md:text-lg leading-tight">
             Kisah Malin Kundang
           </p>

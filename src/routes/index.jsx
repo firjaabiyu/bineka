@@ -5,6 +5,7 @@ import { ChatbotMainPage } from "../features/chatbot/chatbot-main";
 import { MainCommunity } from "../features/community/main";
 import { MarketPlace } from "../features/community/market-place";
 import { MarketPlaceDetail } from "../features/community/market-place-detail";
+import { PetaPage } from "../features/peta/peta";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ export const router = createBrowserRouter([
   {
     path: "/bineka-ai",
     element: <ChatbotMainPage />,
+  },
+
+  {
+    path: "/peta",
+    element: <PetaPage />,
   },
 
   {
