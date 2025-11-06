@@ -7,7 +7,9 @@ import Footer from "./landing-component/footer";
 import { GaleriKarya } from "./landing-component/galeri-karya";
 import HeaderSection from "./landing-component/hero-page";
 import MonumenMarquee from "./landing-component/marquee-ornamen";
+import MusicPlayer from "./landing-component/music";
 import Navbar from "./landing-component/navbar";
+import backsound from "../../assets/audio/backsound.mp3";
 
 
 
@@ -28,6 +30,9 @@ export function MainLanding() {
         
         <GaleriKarya/>
         <Footer/>
+
+          {/* Musik */}
+        <MusicPlayer src={backsound} />
         </>
     )
 }
