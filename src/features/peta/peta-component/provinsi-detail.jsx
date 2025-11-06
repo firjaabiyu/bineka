@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { provinsiData } from "../../../data/provinsi_data";
-import coin from "../../../assets/coin-bineka.svg";
 import FlipCard from "./flipcard";
+import CeritaPopup from "./cerita-popup";
+import CeritaCard from "./cerita-card";
 
 export default function ProvinsiDetail({ selectedProv }) {
   const prov = provinsiData[selectedProv];
+  const [selectedStory, setSelectedStory] = useState(null);
   if (!prov) return null;
 
   return (
@@ -13,26 +16,17 @@ export default function ProvinsiDetail({ selectedProv }) {
 
       {/* Cerita Rakyat */}
       <h3 className="text-xl font-semibold w-11/12 md:w-10/12 text-start text-[#000000] mb-3">Cerita Rakyat <span className="text-[#9A1C1E]">{prov.nama}</span></h3>
+      
       <div className="w-11/12 md:w-10/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
         {prov.cerita.map((item) => (
-          <div
-            key={item.id}
-            className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300"
-          >
-            <div className="w-full rounded-lg bg-white h-36 md:h-40 overflow-hidden">
-              <img src={item.gambar} alt={item.judul} className="w-full h-full object-cover" />
-            </div>
-            <p className="text-white font-bold text-base md:text-lg leading-tight">{item.judul}</p>
-            <div className="flex gap-2 items-center px-3 py-1.5 w-fit rounded-md bg-[#AA2216]">
-              <img src={coin} alt="coin" className="w-4 h-4" />
-              <p className="text-white text-sm font-bold">+{item.poin} Poin</p>
-            </div>
-            <div className="w-full mt-6 py-2.5 rounded-lg text-black font-bold flex bg-[#B0E639] items-center justify-center">
-                Baca Cerita
-            </div>
-          </div>
+          <CeritaCard key={item.id} item={item} onOpen={setSelectedStory} />
         ))}
       </div>
+
+      {/* Popup */}
+      {selectedStory && (
+        <CeritaPopup item={selectedStory} onClose={() => setSelectedStory(null)} />
+      )}
 
       {/* Budaya */}
         <h3 className="text-xl font-semibold w-11/12 md:w-10/12 text-start text-[#000000] mb-3">

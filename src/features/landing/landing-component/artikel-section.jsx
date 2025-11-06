@@ -1,6 +1,22 @@
+import { useState } from "react"; 
 import coin from "../../../assets/coin-bineka.svg";
+import { provinsiData } from "../../../data/provinsi_data";
+import CeritaPopup from "../../peta/peta-component/cerita-popup";
+import danauToba from "../../../assets/cerita-danautoba.png"
+import prambanan from "../../../assets/cerita-prambanan.png"
+import kuntilanak from "../../../assets/cerita-kuntilanak.png"
+import malinKundang from "../../../assets/cerita-malinkundang.png"
 
 export function ArtikelPage() {
+  const [selectedStory, setSelectedStory] = useState(null);
+
+  // dummy dari cerita Aceh
+  const dummyStory = provinsiData["IDAC"].cerita[0];
+
+  const handleOpenDummyPopup = () => {
+    setSelectedStory(dummyStory);
+  };
+
   return (
     <div className="w-full flex flex-col gap-10 items-center py-10 font-[Plus Jakarta Sans]">
       {/* Title */}
@@ -13,66 +29,43 @@ export function ArtikelPage() {
 
       {/* Cards Section */}
       <div className="w-11/12 md:w-10/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Card 1 */}
-        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
-          <p className="text-white font-bold text-base md:text-lg leading-tight">
-            Rehabilitasi Kuntilanak yang Sehat-Sehar
-          </p>
-          <div className="flex gap-2 items-center px-3 py-1.5 w-fit rounded-md bg-[#AA2216]">
-            <img src={coin} alt="coin" className="w-4 h-4" />
-            <p className="text-white text-sm font-bold">+200 Poin</p>
+        {[
+          { title: "Rehabilitasi Kuntilanak yang Sehat-Sehat", poin: 5, gambar: kuntilanak  },
+          { title: "Legenda Danau Toba", poin: 6, gambar: danauToba },
+          { title: "Asal Usul Candi Prambanan", poin: 5, gambar: prambanan },
+          { title: "Kisah Malin Kundang", poin: 5, gambar: malinKundang },
+        ].map((card, index) => (
+          <div
+            key={index}
+            className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300"
+          >
+          <div className="w-full rounded-lg bg-white h-36 md:h-40 overflow-hidden">
+            <img src={card.gambar} alt={card.title} className="w-full h-full object-cover scale-110" />
           </div>
-          <div className="w-full  mt-8 py-2.5 rounded-lg text-black font-bold flex bg-[#B0E639] items-center justify-center">
-            Baca Cerita
-          </div>
-        </div>
-
-        {/* Card 2 */}
-        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
-          <p className="text-white font-bold text-base md:text-lg leading-tight">
-            Legenda Danau Toba
-          </p>
-          <div className="flex gap-2 items-center px-3 py-1.5 w-fit rounded-md bg-[#AA2216]">
-            <img src={coin} alt="coin" className="w-4 h-4" />
-            <p className="text-white text-sm font-bold">+150 Poin</p>
-          </div>
-          <div className="w-full  mt-auto py-2.5 rounded-lg text-black font-bold flex bg-[#B0E639] items-center justify-center">
-            Baca Cerita
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
-          <p className="text-white font-bold text-base md:text-lg leading-tight">
-            Asal Usul Candi Prambanan
-          </p>
-          <div className="flex gap-2 items-center px-3 py-1.5 w-fit rounded-md bg-[#AA2216]">
+            <p className="text-white font-bold text-base md:text-lg leading-tight">
+              {card.title}
+            </p>
+            <div className="flex gap-2 items-center px-3 py-1.5 w-fit rounded-md bg-[#AA2216]">
               <img src={coin} alt="coin" className="w-4 h-4" />
-            <p className="text-white text-sm font-bold">+180 Poin</p>
+              <p className="text-white text-sm font-bold">+{card.poin} Poin</p>
+            </div>
+            <button
+              onClick={handleOpenDummyPopup}
+              className="w-full mt-auto py-2.5 rounded-lg text-black font-bold flex bg-[#B0E639] items-center justify-center cursor-pointer"
+            >
+              Baca Cerita
+            </button>
           </div>
-          <div className="w-full  mt-auto py-2.5 rounded-lg text-black font-bold flex bg-[#B0E639] items-center justify-center">
-            Baca Cerita
-          </div>
-        </div>
-
-        {/* Card 4 */}
-        <div className="p-3.5 rounded-2xl bg-[#CF392C] flex flex-col gap-3 hover:scale-[1.02] transition-transform duration-300">
-          <div className="w-full rounded-lg bg-white h-36 md:h-40"></div>
-          <p className="text-white font-bold text-base md:text-lg leading-tight">
-            Kisah Malin Kundang
-          </p>
-          <div className="flex gap-2 items-center px-3 py-1.5 w-fit rounded-md bg-[#AA2216]">
-            <img src={coin} alt="coin" className="w-4 h-4" />
-            <p className="text-white text-sm font-bold">+220 Poin</p>
-          </div>
-          <div className="w-full  mt-auto py-2.5 rounded-lg text-black font-bold flex bg-[#B0E639] items-center justify-center">
-            Baca Cerita
-          </div>
-        </div>
+        ))}
       </div>
+
+      {/* Popup */}
+      {selectedStory && (
+        <CeritaPopup
+          item={selectedStory}
+          onClose={() => setSelectedStory(null)}
+        />
+      )}
     </div>
   );
 }

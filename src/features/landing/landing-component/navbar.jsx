@@ -26,7 +26,7 @@ export default function Navbar() {
       "
     >
       {/* LOGO */}
-      <div className="font-bold text-2xl">Bineka</div>
+      <Link to="/" className="font-bold text-2xl">Bineka</Link>
 
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center space-x-10 font-normal">

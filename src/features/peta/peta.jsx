@@ -9,7 +9,7 @@ export function PetaPage() {
   return (
     <>
       <Navbar />
-      <div className="p-6 flex-col flex items-center mt-32 relative w-full min-h-screen">
+      <div className="p-6 flex-col flex items-center mt-32 relative w-full min-h-screen font-jakarta">
         <h1 className="text-2xl font-semibold mb-6">Jelajahi Peta Indonesia</h1>
 
         <div className="max-w-2xl mb-10 py-4 px-6 rounded-lg outline-1 outline-[#CF392C] bg-[#FDF6F5] text-center">

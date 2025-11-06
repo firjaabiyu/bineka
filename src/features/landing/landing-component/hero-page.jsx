@@ -81,14 +81,16 @@ export default function HeaderSection() {
             Join Komunitas
           </Link>
 
-          <button className="flex items-center font-jakarta gap-2 px-6 py-3 border border-white/40 text-white font-semibold rounded-full hover:bg-white/10 transition">
+          <Link 
+          to="/peta"
+          className="flex items-center font-jakarta gap-2 px-6 py-3 border border-white/40 text-white font-semibold rounded-full hover:bg-white/10 transition">
             <img
               src="src/assets/icons/location.svg"
               alt="Map Icon"
               className="w-5 h-5"
             />
             Jelajahi Peta
-          </button>
+          </Link>
         </div>
       </div>
 

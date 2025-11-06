@@ -5,13 +5,15 @@ export const provinsiData = {
     cerita: [
         { id: 1, 
             judul: "Legenda Putri Pahang", 
+            daerah: "Aceh",
             poin: 5, 
-            storyDesc: "Legenda tentang Putri Kamaliah dari Pahang yang menjadi permaisuri Sultan Aceh. Karena kerinduannya pada kampung halaman, sang Sultan membangun Taman Putroe Phang sebagai lambang cinta dan kasih sayang.", 
+            deskripsi: "Legenda tentang Putri Kamaliah dari Pahang yang menjadi permaisuri Sultan Aceh. Karena kerinduannya pada kampung halaman, sang Sultan membangun Taman Putroe Phang sebagai lambang cinta dan kasih sayang.", 
             gambar: "/images/aceh/putri-pahang.png" },
         { id: 2, 
             judul: "Mentiko Betuah", 
+            daerah: "Aceh",
             poin: 5, 
-            storyDesc: "Kisah tentang mustika sakti bernama Mentiko Betuah yang dimiliki seorang pangeran dari Simeulue. Batu ajaib itu membawa keberuntungan, namun juga menimbulkan pertikaian dan pengkhianatan di sekitarnya.", 
+            deskripsi: "Kisah tentang mustika sakti bernama Mentiko Betuah yang dimiliki seorang pangeran dari Simeulue. Batu ajaib itu membawa keberuntungan, namun juga menimbulkan pertikaian dan pengkhianatan di sekitarnya.", 
             gambar: "/images/aceh/mentiko-betuah.png" },
         ], 
     budaya: [
