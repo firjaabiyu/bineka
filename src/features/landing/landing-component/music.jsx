@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Music } from "lucide-react";
+import indonesiaRaya from "../../../assets/audio/Indonesia-Raya.mp3";
 
 export default function MusicPlayer({ src }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -24,9 +25,9 @@ export default function MusicPlayer({ src }) {
           ${isPlaying ? "animate-spin" : ""}
         `}
       >
-        <Music size={24} />
+        <Music size={24} color="white" />
       </button>
-      <audio ref={audioRef} src={src} loop />
+       <audio ref={audioRef} src={indonesiaRaya} loop />
     </div>
   );
 }
