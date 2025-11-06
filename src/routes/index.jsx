@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLanding } from "../features/landing/main-landing";
+import { GamePage } from "../features/game/game-page";
 import { ChatbotMainPage } from "../features/chatbot/chatbot-main";
 import { MainCommunity } from "../features/community/main";
 import { MarketPlace } from "../features/community/market-place";
@@ -9,6 +10,10 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLanding />,
+  },
+  {
+    path: "/game",
+    element: <GamePage />,
   },
 
   // tambahkan route dan panggil elemtn disini
