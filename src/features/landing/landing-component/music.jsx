@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Music } from "lucide-react";
-import indonesiaRaya from "../../../assets/audio/Indonesia-Raya.mp3";
+import wonderland from "../../../assets/audio/wonderland.mp3";
 
 export default function MusicPlayer({ src }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -27,7 +27,7 @@ export default function MusicPlayer({ src }) {
       >
         <Music size={24} color="white" />
       </button>
-       <audio ref={audioRef} src={indonesiaRaya} loop />
+       <audio ref={audioRef} src={wonderland} loop />
     </div>
   );
 }
