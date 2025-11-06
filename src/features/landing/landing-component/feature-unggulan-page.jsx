@@ -21,22 +21,24 @@ export function FeatureUnggulanPage() {
                 <p className="text-black text-sm text-center">Berinteraksi dengan chatbot berbahasa daerah guna melestarikan<br /> bahasa lokal.</p>
             </div>
 
-            <div className="relative w-3/5 flex items-center rounded-full p-1.5 py-2 bg-[#ECEAEA] overflow-hidden ">
+            <div className="relative w-3/5 flex items-center rounded-full p-2 bg-[#ECEAEA] overflow-hidden">
+                {/* Background Slider */}
                 <motion.div
                     layout
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className="absolute top-1 bottom-1 my-1 rounded-full bg-[#CF392C] mx-2"
+                    transition={{ type: "spring", stiffness: 250, damping: 15, bounce: 0.4 }}
+                    className="absolute inset-y-2 rounded-full bg-[#CF392C]"
                     style={{
-                        left: `${(100 / tabs.length) * activeIndex}%`,
-                        width: `${100 / tabs.length}%`,
+                        left: `calc(${(100 / tabs.length) * activeIndex}% + 8px)`,
+                        width: `calc(${100 / tabs.length}% - 16px)`,
                     }}
                 />
 
+                {/* Tab Buttons */}
                 {tabs.map((label, index) => (
                     <button
                         key={index}
                         onClick={() => setActiveIndex(index)}
-                        className={`relative z-10 w-1/4 py-3 px-4 rounded-full flex items-center justify-center transition-colors `}
+                        className="relative z-10 flex-1 py-3 rounded-full flex items-center justify-center transition-colors"
                     >
                         <p
                             className={`font-semibold transition-colors ${activeIndex === index ? "text-white" : "text-black"
